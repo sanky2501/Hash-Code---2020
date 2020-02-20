@@ -1,0 +1,50 @@
+
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+using namespace std;
+
+int main() {
+    int sum = 0,B,L,D;
+    int x;
+    ifstream inFile;
+
+    inFile.open("C:/Users/Sanket/Desktop/New folder/a_example.txt");
+    if (!inFile) {
+        cout << "Unable to open file";
+        exit(1); // terminate with error
+    }
+
+    while (inFile >> x) {
+        cin>>B>>L>>D;
+        vector<book> books;
+        for (int i=0;i<B;i++){
+                int s;
+        cin>>s;
+             books.push_back(new book(i,s));
+        }
+        vector<library> librarys;
+  vector<int> ids;
+  for(int i=0; i<L; ++i)
+  {
+    int N,T,M;
+
+    cin>>N>>T>>M;
+
+    for(int j=0; j<N; ++j)
+    {
+      int id;
+      cin>>id;
+
+      ids.push_back(id);
+    }
+
+    librarys.push_back(new library(N,T,M,ids));
+
+  }
+    }
+
+    inFile.close();
+    cout << "Sum = " << sum << endl;
+    return 0;
+}
